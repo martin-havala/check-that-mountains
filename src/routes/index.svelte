@@ -9,7 +9,7 @@
 	import img_sad from '/public/sad.png';
 	import img_happy from '/public/happy.png';
 	import { DateInput } from 'date-picker-svelte';
-	let startDate = new Date('2022-05-12T06:00:00.000');
+	let startDate = new Date('2021-01-24T06:00:00.000');
 	let maxDate = new Date();
 	let closeOnSelection = true;
 
