@@ -10,8 +10,8 @@ const config = {
 	kit: {
 		adapter: adapter({
 			// default options are shown
-			pages: 'dist',
-			assets: 'dist',
+			pages: 'docs',
+			assets: 'docs',
 			precompress: false,
 			fallback: 'index.html',
 			path: ''
