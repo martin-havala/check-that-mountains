@@ -17,7 +17,8 @@ const config = {
 			path: ''
 		}),
 		paths: {
-			base: dev ? '' : '/check-that-mountains'
+			base: dev ? '' : '/check-that-mountains',
+			assets: 'https://martin-havala.github.io/check-that-mountains'
 		},
 		files: {
 			assets: 'public'

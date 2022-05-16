@@ -9,7 +9,7 @@
 	import img_sad from '/public/sad.png';
 	import img_happy from '/public/happy.png';
 	import { DateInput } from 'date-picker-svelte';
-	let startDate = new Date('2020-12-24T06:00:00.000');
+	let startDate = new Date('2022-05-12T06:00:00.000');
 	let maxDate = new Date();
 	let closeOnSelection = true;
 
@@ -53,7 +53,6 @@
 
 	function analyseData(data) {
 		const [min, max] = d3.extent([...data.map((d) => d.priceUsd), 0]);
-		console.log(min, max);
 		const blur = Math.ceil(data.length / 23);
 		const blurredData = [];
 		for (let i = blur; i < data.length; i++) {
@@ -63,11 +62,11 @@
 				index: i
 			});
 		}
-		const hills = [];
+		const hills = [data.slice(0, blur)];
 		blurredData.reduce(
 			(ac, v, i) => {
-				if (i == blurredData.length - 1) {
-					hills.push(data.slice(ac.startIndex + blur, i + blur));
+				if (i === blurredData.length - 1) {
+					hills.push(data.slice(ac.startIndex + blur));
 				}
 				if (v.priceUsd > blurredData[i > 0 ? i - 1 : i].priceUsd) {
 					if (!ac.growing && i - ac.startIndex > blur) {
@@ -102,7 +101,6 @@
 			}
 		);
 
-		console.log(data[0], data[data.length - 1]);
 		isGrowing =
 			data[0].priceUsd < data[data.length - 1].priceUsd && hills[hills.length - 1].priceUsd;
 
@@ -130,8 +128,8 @@
 		let skyline = [];
 		let buf = [];
 
-		data.forEach((p) => {
-			if (!!optimizedPoints[`${p.date}`] && buf.length) {
+		data.forEach((p, i) => {
+			if ((!!optimizedPoints[`${p.date}`] && buf.length) || i == data.length - 1) {
 				buf.push(p);
 				let buf2 = [];
 				if (buf[0].priceUsd > p.priceUsd) {
@@ -152,7 +150,6 @@
 			}
 			buf.push(p);
 		});
-
 		return { data, lines: [...res], skyline };
 	}
 
@@ -166,7 +163,7 @@
 		const hills = d3.select(svg).selectChild('#hills');
 		const hills2 = d3.select(svg).selectChild('#hills2');
 		const [minV, maxV] = d3.extent([...data.map((d) => d.priceUsd), 0]);
-		const [minD, maxD] = d3.extent([...data.map((d) => d.date), new Date()]);
+		const [minD, maxD] = d3.extent([...data.map((d) => d.date)]);
 
 		xScale.domain([minD, maxD]);
 		yScale.domain([minV, maxV]);
