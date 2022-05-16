@@ -275,10 +275,10 @@
 	<line x1="0" y1="400" x2="300" y2="400" />
 	<line x1="0" y1="440" x2="300" y2="440" />
 	<line x1="0" y1="480" x2="300" y2="480" />
-	<image href="./check.png" height="300" width="300" />
-	<image href="./checking.png" height="300" width="300" x="0" y="300" />
-	<image href="./checking.png" height="300" width="300" x="300" y="0" />
-	<image href="./bitcoin.svg" height="23" width="23" x="270" y="340" />
+	<image href="../check.png" height="300" width="300" />
+	<image href="../checking.png" height="300" width="300" x="0" y="300" />
+	<image href="../checking.png" height="300" width="300" x="300" y="0" />
+	<image href="../bitcoin.svg" height="23" width="23" x="270" y="340" />
 	<image href="./{isGrowing ? 'happy' : 'sad'}.png" height="300" width="300" x="300" y="300" />
 	<rect id="mainFrame" x="0" y="0" width="600" height="600" />
 	<use href="#frame" x="0" y="0" />
