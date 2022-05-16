@@ -17,7 +17,7 @@ const config = {
 			path: ''
 		}),
 		paths: {
-			base: dev ? '' : '/check-that-mountains'
+			base: dev ? '' : ''
 		},
 		files: {
 			assets: 'public'
