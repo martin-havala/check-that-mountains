@@ -7,6 +7,7 @@
 	import img_checking from '../assets/checking.png';
 	import img_bitcoin from '../assets/bitcoin.svg';
 	import img_sad from '../assets/sad.png';
+	import img_disappointed from '../assets/disappointed.png';
 	import img_happy from '../assets/happy.png';
 	import { DateInput } from 'date-picker-svelte';
 	let startDate = new Date('2021-01-24T06:00:00.000');
@@ -23,7 +24,7 @@
 	let height = 120;
 	let xScale = d3.scaleLinear().domain(range[0]).range([0, width]);
 	let yScale = d3.scaleTime().domain(range[1]).range([height, 0]);
-	let isGrowing = false;
+	let mood_img = img_happy;
 
 	onMount(resize);
 
@@ -100,9 +101,14 @@
 				growing: true
 			}
 		);
+		const lastSegment = hills[hills.length - 1];
 
-		isGrowing =
-			data[0].priceUsd < data[data.length - 1].priceUsd && hills[hills.length - 1].priceUsd;
+		mood_img =
+			data[0].priceUsd < data[data.length - 1].priceUsd
+				? lastSegment[0].priceUsd < lastSegment[lastSegment.length - 1].priceUsd
+					? img_happy
+					: img_disappointed
+				: img_sad;
 
 		const points = [];
 		hills.forEach((h) => {
@@ -281,8 +287,8 @@
 	<image href={img_check} height="300" width="300" />
 	<image href={img_checking} height="300" width="300" x="0" y="300" />
 	<image href={img_checking} height="300" width="300" x="300" y="0" />
-	<image href={img_bitcoin} height="23" width="23" x="270" y="340" />
-	<image href={isGrowing ? img_happy : img_sad} height="300" width="300" x="300" y="300" />
+	<image href={img_bitcoin} height="23" width="23" x="272" y="310" />
+	<image href={mood_img} height="300" width="300" x="300" y="300" />
 	<rect id="mainFrame" x="0" y="0" width="600" height="600" />
 	<use href="#frame" x="0" y="0" />
 	<use href="#frame" x="0" y="300" />
@@ -311,9 +317,9 @@
 			}
 
 			&.currency {
-				stroke: red;
-				stroke-width: 4;
-				opacity: 0.8;
+				stroke: orange;
+				stroke-width: 3;
+				opacity: 1;
 			}
 		}
 		rect {
