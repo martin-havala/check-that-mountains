@@ -3,6 +3,11 @@
 	import * as d3 from 'd3';
 
 	import img_check from '/public/check.png';
+	import img_clouds from '/public/clouds.png';
+	import img_checking from '/public/checking.png';
+	import img_bitcoin from '/public/bitcoin.svg';
+	import img_sad from '/public/sad.png';
+	import img_happy from '/public/happy.png';
 	import { DateInput } from 'date-picker-svelte';
 	let startDate = new Date('2020-12-24T06:00:00.000');
 	let maxDate = new Date();
@@ -264,7 +269,7 @@
 			<stop offset="100%" stop-color="rgba(255, 255, 255, 1)" />
 		</linearGradient>
 		<rect id="frame" x="0" y="0" width="300" height="300" />
-		<image id="clouds" href="/clouds.png" height="300" width="300" />
+		<image id="clouds" href={img_clouds} height="300" width="300" />
 	</defs>
 	<use href="#clouds" x="0" y="300" />
 	<use href="#clouds" x="300" y="0" />
@@ -276,11 +281,11 @@
 	<line x1="0" y1="400" x2="300" y2="400" />
 	<line x1="0" y1="440" x2="300" y2="440" />
 	<line x1="0" y1="480" x2="300" y2="480" />
-	<image href="{img_check}" height="300" width="300" />
-	<image href="/checking.png" height="300" width="300" x="0" y="300" />
-	<image href="/checking.png" height="300" width="300" x="300" y="0" />
-	<image href="/bitcoin.svg" height="23" width="23" x="270" y="340" />
-	<image href="/{isGrowing ? 'happy' : 'sad'}.png" height="300" width="300" x="300" y="300" />
+	<image href={img_check} height="300" width="300" />
+	<image href={img_checking} height="300" width="300" x="0" y="300" />
+	<image href={img_checking} height="300" width="300" x="300" y="0" />
+	<image href={img_bitcoin} height="23" width="23" x="270" y="340" />
+	<image href={isGrowing ? img_happy : img_sad} height="300" width="300" x="300" y="300" />
 	<rect id="mainFrame" x="0" y="0" width="600" height="600" />
 	<use href="#frame" x="0" y="0" />
 	<use href="#frame" x="0" y="300" />
