@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 
+	import img_check from '/public/check.png';
 	import { DateInput } from 'date-picker-svelte';
 	let startDate = new Date('2020-12-24T06:00:00.000');
 	let maxDate = new Date();
@@ -275,7 +276,7 @@
 	<line x1="0" y1="400" x2="300" y2="400" />
 	<line x1="0" y1="440" x2="300" y2="440" />
 	<line x1="0" y1="480" x2="300" y2="480" />
-	<image href="/check.png" height="300" width="300" />
+	<image href="{img_check}" height="300" width="300" />
 	<image href="/checking.png" height="300" width="300" x="0" y="300" />
 	<image href="/checking.png" height="300" width="300" x="300" y="0" />
 	<image href="/bitcoin.svg" height="23" width="23" x="270" y="340" />
