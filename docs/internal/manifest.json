@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-6a255a39.js",
+    "file": "start-f8cc28a5.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -35,7 +35,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-3f91e7fe.js",
+    "file": "pages/index.svelte-425025dd.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -44,7 +44,7 @@
       "_index-75796e17.js"
     ],
     "css": [
-      "assets/pages/index.svelte-793cc6d5.css"
+      "assets/pages/index.svelte-7ba452f3.css"
     ],
     "assets": [
       "assets/check-1602c67d.png",
@@ -52,6 +52,7 @@
       "assets/checking-b7e523ec.png",
       "assets/bitcoin-51a43623.svg",
       "assets/sad-0637b5f6.png",
+      "assets/disappointed-f7562ed4.png",
       "assets/happy-0e00df1e.png"
     ]
   },
