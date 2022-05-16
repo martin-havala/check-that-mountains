@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte';
 	import * as d3 from 'd3';
 
-	import img_check from '/public/check.png';
-	import img_clouds from '/public/clouds.png';
-	import img_checking from '/public/checking.png';
-	import img_bitcoin from '/public/bitcoin.svg';
-	import img_sad from '/public/sad.png';
-	import img_happy from '/public/happy.png';
+	import img_check from '../assets/check.png';
+	import img_clouds from '../assets/clouds.png';
+	import img_checking from '../assets/checking.png';
+	import img_bitcoin from '../assets/bitcoin.svg';
+	import img_sad from '../assets/sad.png';
+	import img_happy from '../assets/happy.png';
 	import { DateInput } from 'date-picker-svelte';
 	let startDate = new Date('2021-01-24T06:00:00.000');
 	let maxDate = new Date();
@@ -311,7 +311,7 @@
 			}
 
 			&.currency {
-				stroke: orange;
+				stroke: red;
 				stroke-width: 4;
 				opacity: 0.8;
 			}

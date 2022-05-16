@@ -22,10 +22,7 @@
 		"forceConsistentCasingInFileNames": true,
 		"baseUrl": ".",
 		"allowJs": true,
-		"checkJs": true,
-		"paths": {
-			"@public/*": ["public/*"]
-		}
+		"checkJs": true
 	},
-	"include": ["src/**/*.js", "src/**/*.ts", "src/**/*.svelte", "public/**/*.*"]
+	"include": ["src/**/*.js", "src/**/*.ts", "src/**/*.svelte"]
 }

@@ -20,9 +20,7 @@ const config = {
 			base: dev ? '' : '/check-that-mountains',
 			assets: 'https://martin-havala.github.io/check-that-mountains'
 		},
-		files: {
-			assets: 'public'
-		},
+		
 		// If you are not using a .nojekyll file, change your appDir to something not starting with an underscore.
 		// For example, instead of '_app', use 'app_', 'internal', etc.
 		appDir: 'internal',
