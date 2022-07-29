@@ -10,7 +10,9 @@
 	import img_disappointed from '../assets/disappointed.png';
 	import img_happy from '../assets/happy.png';
 	import { DateInput } from 'date-picker-svelte';
+
 	let startDate = new Date('2021-01-24T06:00:00.000');
+	let minDate = new Date('2015-01-24T06:00:00.000');
 	let maxDate = new Date();
 	let closeOnSelection = true;
 
@@ -53,7 +55,6 @@
 	}
 
 	function analyseData(data) {
-		const [min, max] = d3.extent([...data.map((d) => d.priceUsd), 0]);
 		const blur = Math.ceil(data.length / 23);
 		const blurredData = [];
 		for (let i = blur; i < data.length; i++) {
@@ -111,6 +112,7 @@
 				: img_sad;
 
 		const points = [];
+
 		hills.forEach((h) => {
 			const min = d3.minIndex(h.map((h) => h.priceUsd));
 			const max = d3.maxIndex(h.map((h) => h.priceUsd));
@@ -251,7 +253,13 @@
 <svelte:window on:resize={resize} />
 <div class="flex">
 	<div>When did you invest into bitcoin?</div>
-	<DateInput bind:value={startDate} bind:closeOnSelection bind:max={maxDate} on:select={getData} />
+	<DateInput
+		bind:value={startDate}
+		bind:min={minDate}
+		bind:closeOnSelection
+		bind:max={maxDate}
+		on:select={getData}
+	/>
 </div>
 <svg bind:this={svg}>
 	<defs>

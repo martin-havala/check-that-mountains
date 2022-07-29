@@ -5,16 +5,19 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/start-0d88feb2.js">
-	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/chunks/index-33611ab9.js">
-	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/chunks/index-75796e17.js">
+	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/start-ba315ce4.js">
+	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/index-85aac306.js">
+	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/index-7d4df646.js">
 	</head>
 	<body>
 		<div id="svelte">
-		<script type="module" data-hydrate="45h">
-		import { start } from "https://martin-havala.github.io/check-that-mountains/app/start-0d88feb2.js";
+		<script type="module" data-sveltekit-hydrate="45h">
+		import { set_public_env, start } from "https://martin-havala.github.io/check-that-mountains/app/immutable/start-ba315ce4.js";
+
+		set_public_env({});
+
 		start({
-			target: document.querySelector('[data-hydrate="45h"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
 			paths: {"base":"/check-that-mountains","assets":"https://martin-havala.github.io/check-that-mountains"},
 			session: {},
 			route: true,
