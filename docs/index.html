@@ -2,29 +2,35 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="https://martin-havala.github.io/check-that-mountains/favicon.png" />
+		<link rel="stylesheet" href="https://martin-havala.github.io/check-that-mountains/styles.css" />
+		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/start-ba315ce4.js">
-	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/index-85aac306.js">
-	<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/index-7d4df646.js">
+		<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/entry/start.da0ad8ae.js">
+		<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/index.22e2ed11.js">
+		<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/singletons.f3153c1e.js">
+		<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/chunks/index.76b5dfa9.js">
+		<link rel="modulepreload" href="https://martin-havala.github.io/check-that-mountains/app/immutable/entry/app.2a769742.js">
 	</head>
-	<body>
-		<div id="svelte">
-		<script type="module" data-sveltekit-hydrate="45h">
-		import { set_public_env, start } from "https://martin-havala.github.io/check-that-mountains/app/immutable/start-ba315ce4.js";
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+			<script>
+				{
+					__sveltekit_m0qflm = {
+						env: {},
+						assets: "https://martin-havala.github.io/check-that-mountains",
+						base: "/check-that-mountains",
+						element: document.currentScript.parentElement
+					};
 
-		set_public_env({});
-
-		start({
-			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
-			paths: {"base":"/check-that-mountains","assets":"https://martin-havala.github.io/check-that-mountains"},
-			session: {},
-			route: true,
-			spa: true,
-			trailing_slash: "never",
-			hydrate: null
-		});
-	</script></div>
+					Promise.all([
+						import("https://martin-havala.github.io/check-that-mountains/app/immutable/entry/start.da0ad8ae.js"),
+						import("https://martin-havala.github.io/check-that-mountains/app/immutable/entry/app.2a769742.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_m0qflm.element);
+					});
+				}
+			</script>
+		</div>
 	</body>
 </html>
