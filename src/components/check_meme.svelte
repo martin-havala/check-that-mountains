@@ -1,7 +1,6 @@
 <script lang="ts">
-	import * as d3 from 'd3';
-	import { onMount } from 'svelte';
 	import { MOOD_IMAGE, type CurrData } from '$lib/model';
+	import * as d3 from 'd3';
 
 	import { analyseData, renderData } from '$lib/data';
 	import { DateInput } from 'date-picker-svelte';
@@ -10,10 +9,9 @@
 	import img_checking from '../assets/checking.svg';
 	import clouds from '../assets/clouds.svg';
 	import clouds_backwards from '../assets/clouds_backwards.svg';
-	import img_happy from '../assets/happy.svg';
 	import img_desperate from '../assets/desperate.svg';
+	import img_happy from '../assets/happy.svg';
 	import img_suspect from '../assets/suspect.svg';
-	import { MOOD_IMAGE } from '$lib/model';
 
 	let startDate = new Date('2021-01-24T06:00:00.000');
 	let minDate = new Date('2015-01-24T06:00:00.000');
