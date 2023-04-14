@@ -9,3 +9,7 @@
 		max-width: 600px;
 	}
 </style>
+
+<script>
+	export const prerender = true;
+</script>
