@@ -12,8 +12,9 @@
 	import img_desperate from '../assets/desperate.svg';
 	import img_happy from '../assets/happy.svg';
 	import img_suspect from '../assets/suspect.svg';
+	import { onMount } from 'svelte';
 
-	let startDate = new Date('2021-01-24T06:00:00.000');
+	let startDate = new Date('2015-01-24T06:00:00.000');
 	let minDate = new Date('2015-01-24T06:00:00.000');
 	let maxDate = new Date();
 	maxDate.setDate(maxDate.getDate() - 3);
@@ -86,6 +87,10 @@
 				}
 			});
 	}
+
+	onMount(() => {
+		getData();
+	});
 </script>
 
 <svelte:window on:resize={resize} />
@@ -96,6 +101,7 @@
 			bind:value={startDate}
 			bind:closeOnSelection
 			bind:max={maxDate}
+			bind:min={minDate}
 			on:select={getData}
 			format="yyyy-MM-dd"
 		/>
@@ -119,7 +125,14 @@
 			<stop offset="90%" stop-color="rgba(255, 255, 255, 1)" />
 			<stop offset="100%" stop-color="rgba(255, 255, 255, 1)" />
 		</linearGradient>
-		<rect id="frame" x="0" y="0" width="300" height="300" />
+		<rect
+			id="frame"
+			x="0"
+			y="0"
+			width="300"
+			height="300"
+			style="fill:none; stroke: black; stroke-width: 3px;pointer-events: none;"
+		/>
 	</defs>
 
 	<image href={clouds_backwards} height="300" width="300" x="0" y="0" />
@@ -158,6 +171,7 @@
 
 		:global(path.peaks) {
 			stroke: black;
+			fill:transparent;
 		}
 		:global(.currency) {
 			stroke: orange;
@@ -178,6 +192,7 @@
 		}
 		#mainFrame {
 			stroke-width: 8;
+			pointer-events: none;
 		}
 
 		line {
@@ -185,6 +200,9 @@
 			stroke-width: 1;
 			opacity: 0.5;
 		}
+	}
+	image {
+		pointer-events: none;
 	}
 	.flex {
 		display: flex;
